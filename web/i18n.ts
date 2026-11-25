@@ -191,7 +191,7 @@ function applyText(node: Text): void {
   if (!current.trim()) return;
   const previous = textState.get(node);
   if (previous && current === previous.last) return;
-  const source = previous ? current : current;
+  const source = previous && current === previous.last ? previous.source : current;
   const next = language === 'vi' ? translate(source) : source;
   textState.set(node, { source, last: next });
   if (next !== current) node.nodeValue = next;
@@ -204,7 +204,7 @@ function applyAttribute(el: Element, name: string): void {
   if (!map) { map = new Map(); attrState.set(el, map); }
   const previous = map.get(name);
   if (previous && current === previous.last) return;
-  const source = current;
+  const source = previous && current === previous.last ? previous.source : current;
   const next = language === 'vi' ? translate(source) : source;
   map.set(name, { source, last: next });
   if (next !== current) el.setAttribute(name, next);
