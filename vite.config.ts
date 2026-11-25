@@ -18,6 +18,8 @@ const genAssetVer = {
 };
 
 export default defineConfig({
+  // GitHub Pages project site is served below /stzb-battle-sim/.
+  base: process.env.GITHUB_ACTIONS === 'true' ? '/stzb-battle-sim/' : '/',
   plugins: [genAssetVer],
   build: {
     rollupOptions: {
