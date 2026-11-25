@@ -1,3 +1,4 @@
+import '../i18n';
 import '../styles.css';
 import { Rng } from '../../src/engine/rng';
 import type { BattleReport, General } from '../../src/engine/types';
