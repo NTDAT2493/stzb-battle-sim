@@ -2,6 +2,7 @@
  * 战斗模拟器入口：选将 → 配战法 → 运行引擎 → 逐回合可视化战报
  * 布局：100% 固定单屏 —— 顶栏（战报/战法） / 中间配将区 / 底栏（开始模拟）
  */
+import './i18n';
 import './styles.css';
 import './mobile.css';
 import './mobile-ui.css';
