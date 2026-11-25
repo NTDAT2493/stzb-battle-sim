@@ -3,6 +3,8 @@
  * Chỉ dịch nhãn giao diện; không thay đổi dữ liệu chiến đấu hay nội dung tên riêng.
  * Có thể chuyển Việt/中文, lựa chọn được lưu trong localStorage.
  */
+import { NAME_GLOSSARY } from './nameGlossary';
+
 type Language = 'vi' | 'zh';
 const KEY = 'stzb_ui_language';
 
@@ -171,6 +173,7 @@ const DICT: Record<string, string> = {
   '帮助':'Trợ giúp',
   '语言':'Ngôn ngữ',
   '中文':'中文',
+  ...NAME_GLOSSARY,
 };
 
 const entries = Object.entries(DICT).sort((a, b) => b[0].length - a[0].length);
